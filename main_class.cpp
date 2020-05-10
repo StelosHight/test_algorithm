@@ -67,6 +67,7 @@ void main_class::update()
 
 void main_class::resize_timer(const QSize& size)
 {
+    qreal radius_first, radius_second;
     timer_scene->setSceneRect(0, 0, size.width(), size.height());
     QGraphicsLineItem* line;
     int i = 270;

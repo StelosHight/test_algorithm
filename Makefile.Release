@@ -245,6 +245,8 @@ release/moc_main_class.cpp: main_class.h \
 		C:/Qt/5.14.2/mingw73_64/include/QtWidgets/qgraphicsscene.h \
 		C:/Qt/5.14.2/mingw73_64/include/QtWidgets/QGraphicsLineItem \
 		C:/Qt/5.14.2/mingw73_64/include/QtWidgets/qgraphicsitem.h \
+		C:/Qt/5.14.2/mingw73_64/include/QtWidgets/QLabel \
+		C:/Qt/5.14.2/mingw73_64/include/QtWidgets/qlabel.h \
 		my_scene.h \
 		C:/Qt/5.14.2/mingw73_64/include/QtWidgets/QGraphicsScene \
 		my_gview.h \
@@ -379,6 +381,8 @@ release/moc_mainwindow.cpp: mainwindow.h \
 		C:/Qt/5.14.2/mingw73_64/include/QtWidgets/qgraphicsscene.h \
 		C:/Qt/5.14.2/mingw73_64/include/QtWidgets/QGraphicsLineItem \
 		C:/Qt/5.14.2/mingw73_64/include/QtWidgets/qgraphicsitem.h \
+		C:/Qt/5.14.2/mingw73_64/include/QtWidgets/QLabel \
+		C:/Qt/5.14.2/mingw73_64/include/QtWidgets/qlabel.h \
 		my_scene.h \
 		C:/Qt/5.14.2/mingw73_64/include/QtWidgets/QGraphicsScene \
 		my_gview.h \
@@ -654,6 +658,8 @@ release/main.o: main.cpp mainwindow.h \
 		C:/Qt/5.14.2/mingw73_64/include/QtWidgets/qgraphicsscene.h \
 		C:/Qt/5.14.2/mingw73_64/include/QtWidgets/QGraphicsLineItem \
 		C:/Qt/5.14.2/mingw73_64/include/QtWidgets/qgraphicsitem.h \
+		C:/Qt/5.14.2/mingw73_64/include/QtWidgets/QLabel \
+		C:/Qt/5.14.2/mingw73_64/include/QtWidgets/qlabel.h \
 		my_scene.h \
 		C:/Qt/5.14.2/mingw73_64/include/QtWidgets/QGraphicsScene \
 		my_gview.h \
@@ -788,15 +794,14 @@ release/main_class.o: main_class.cpp main_class.h \
 		C:/Qt/5.14.2/mingw73_64/include/QtWidgets/qgraphicsscene.h \
 		C:/Qt/5.14.2/mingw73_64/include/QtWidgets/QGraphicsLineItem \
 		C:/Qt/5.14.2/mingw73_64/include/QtWidgets/qgraphicsitem.h \
+		C:/Qt/5.14.2/mingw73_64/include/QtWidgets/QLabel \
+		C:/Qt/5.14.2/mingw73_64/include/QtWidgets/qlabel.h \
 		my_scene.h \
 		C:/Qt/5.14.2/mingw73_64/include/QtWidgets/QGraphicsScene \
 		my_gview.h \
 		C:/Qt/5.14.2/mingw73_64/include/QtGui/QResizeEvent \
 		C:/Qt/5.14.2/mingw73_64/include/QtCore/QtMath \
-		C:/Qt/5.14.2/mingw73_64/include/QtCore/qmath.h \
-		C:/Qt/5.14.2/mingw73_64/include/QtWidgets/QScrollBar \
-		C:/Qt/5.14.2/mingw73_64/include/QtWidgets/qscrollbar.h \
-		C:/Qt/5.14.2/mingw73_64/include/QtWidgets/qabstractslider.h
+		C:/Qt/5.14.2/mingw73_64/include/QtCore/qmath.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\main_class.o main_class.cpp
 
 release/mainwindow.o: mainwindow.cpp mainwindow.h \
@@ -925,6 +930,8 @@ release/mainwindow.o: mainwindow.cpp mainwindow.h \
 		C:/Qt/5.14.2/mingw73_64/include/QtWidgets/qgraphicsscene.h \
 		C:/Qt/5.14.2/mingw73_64/include/QtWidgets/QGraphicsLineItem \
 		C:/Qt/5.14.2/mingw73_64/include/QtWidgets/qgraphicsitem.h \
+		C:/Qt/5.14.2/mingw73_64/include/QtWidgets/QLabel \
+		C:/Qt/5.14.2/mingw73_64/include/QtWidgets/qlabel.h \
 		my_scene.h \
 		C:/Qt/5.14.2/mingw73_64/include/QtWidgets/QGraphicsScene \
 		my_gview.h \
