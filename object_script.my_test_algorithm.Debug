@@ -1,0 +1,10 @@
+debug/algorithm_view.o
+debug/main.o
+debug/main_class.o
+debug/mainwindow.o
+debug/my_gview.o
+debug/my_scene.o
+debug/moc_algorithm_view.o
+debug/moc_main_class.o
+debug/moc_mainwindow.o
+debug/moc_my_gview.o

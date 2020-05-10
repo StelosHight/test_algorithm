@@ -1,0 +1,10 @@
+release/algorithm_view.o
+release/main.o
+release/main_class.o
+release/mainwindow.o
+release/my_gview.o
+release/my_scene.o
+release/moc_algorithm_view.o
+release/moc_main_class.o
+release/moc_mainwindow.o
+release/moc_my_gview.o

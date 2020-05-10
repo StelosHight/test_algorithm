@@ -7,6 +7,8 @@ main_class::main_class(): main_scene(new my_scene()), timer_scene(new my_scene()
     this->timer_view = new my_gview();
     this->sup_view = new my_gview();
 
+    algorithm = nullptr;
+
     cur_iter = 0;
 
     this->main_view->setScene(main_scene);
@@ -14,6 +16,7 @@ main_class::main_class(): main_scene(new my_scene()), timer_scene(new my_scene()
     this->sup_view->setScene(sup_scene);
 
     connect(timer_view, SIGNAL(ResizeEventSignal(const QSize&)), this, SLOT(resize_timer(const QSize&)));
+    connect(main_view, SIGNAL(ResizeEventSignal(const QSize&)), this, SLOT(resize_main(const QSize&)));
 
     labels.push_back(new QLabel("Таймер"));
     labels.last()->setFont(QFont("Times New Roman", 14));
@@ -31,6 +34,7 @@ main_class::~main_class()
 {
     delete main_view;
     delete main_scene;
+    if (algorithm) delete algorithm;
     delete timer_view;
     delete timer_scene;
     delete sup_view;
@@ -60,7 +64,11 @@ QList<QLabel *> main_class::get_labels()
 void main_class::update()
 {
     if (cur_iter != 0) timers_line[cur_iter - 1]->setPen(QPen(Qt::black, 3, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
-    if (cur_iter == 8) cur_iter = 0;
+    if (cur_iter == 8)
+    {
+        if (algorithm) algorithm->do_magic();
+        cur_iter = 0;
+    }
     timers_line[cur_iter]->setPen(QPen(Qt::red, 3, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
     cur_iter++;
 }
@@ -97,4 +105,17 @@ void main_class::resize_timer(const QSize& size)
     }
     if (cur_iter == 8) cur_iter = 0;
     timers_line[cur_iter]->setPen(QPen(Qt::red, 3, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
+}
+
+void main_class::resize_main(const QSize &size)
+{
+    if (algorithm)
+    {
+        algorithm->set_coords(size.width() / 2, size.height() / 2);
+    }
+    else
+    {
+        algorithm = new algorithm_view(size.width() / 2, size.height() / 2);
+        main_scene->addItem(algorithm);
+    }
 }

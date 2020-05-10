@@ -10,11 +10,7 @@
 #include <QLabel>
 #include <my_scene.h>
 #include <my_gview.h>
-
-struct Coord{
-    int x;
-    int y;
-};
+#include <algorithm_view.h>
 
 class main_class: public QObject
 {
@@ -34,16 +30,18 @@ private:
     my_scene *timer_scene;
     my_scene *sup_scene;
 
+    algorithm_view *algorithm;
+
     QList<QLabel*> labels;
 
     QList<QGraphicsLineItem*> timers_line;
 
-    QList<Coord> coords;
     QTimer *timer;
     int cur_iter;
 private slots:
     void update();
     void resize_timer(const QSize& size);
+    void resize_main(const QSize& size);
 };
 
 #endif // MAIN_CLASS_H
