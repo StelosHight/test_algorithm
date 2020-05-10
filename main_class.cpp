@@ -67,17 +67,18 @@ void main_class::update()
 
 void main_class::resize_timer(const QSize& size)
 {
-    qreal radius_first, radius_second;
+    qreal radius_first = size.height() * size.width() / (7 * (size.width() + size.height()) / 2),
+            radius_second = size.height() * size.width() / (3.5 * (size.width() + size.height()) / 2);
     timer_scene->setSceneRect(0, 0, size.width(), size.height());
     QGraphicsLineItem* line;
     int i = 270;
     if (timers_line.size())
     {
         foreach(line, timers_line){
-            line->setLine(size.width() / 2 + size.height() / 7 * qCos((i * M_PI) / 180),
-                          size.height() / 2 + size.height() / 7 * qSin((i * M_PI) / 180),
-                          size.width() / 2 + size.height() / 3.5 * qCos((i * M_PI) / 180),
-                          size.height() / 2 + size.height() / 3.5 * qSin((i * M_PI) / 180));
+            line->setLine(size.width() / 2 + radius_first * qCos((i * M_PI) / 180),
+                          size.height() / 2 + radius_first * qSin((i * M_PI) / 180),
+                          size.width() / 2 + radius_second * qCos((i * M_PI) / 180),
+                          size.height() / 2 + radius_second * qSin((i * M_PI) / 180));
             line->setPen(QPen(Qt::black, 3, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
             i += 45;
         }
@@ -86,16 +87,14 @@ void main_class::resize_timer(const QSize& size)
     {
         for (int i = 270; i < 630; i += 45)
         {
-            timers_line.push_back(timer_scene->addLine(size.width() / 2 + size.height() / 7 * qCos((i * M_PI) / 180),
-                                                       size.height() / 2 + size.height() / 7 * qSin((i * M_PI) / 180),
-                                                       size.width() / 2 + size.height() / 3.5 * qCos((i * M_PI) / 180),
-                                                       size.height() / 2 + size.height() / 3.5 * qSin((i * M_PI) / 180),
+            timers_line.push_back(timer_scene->addLine(size.width() / 2 + radius_first * qCos((i * M_PI) / 180),
+                                                       size.height() / 2 + radius_first * qSin((i * M_PI) / 180),
+                                                       size.width() / 2 + radius_second * qCos((i * M_PI) / 180),
+                                                       size.height() / 2 + radius_second * qSin((i * M_PI) / 180),
                                                        QPen(Qt::black, 3, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin)));
             timers_line.last()->pen().setWidth(3);
         }
     }
-    labels[0]->setText(QString::number(timer_scene->sceneRect().height()));
-    labels[1]->setText(QString::number(size.height()));
     if (cur_iter == 8) cur_iter = 0;
     timers_line[cur_iter]->setPen(QPen(Qt::red, 3, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
 }
